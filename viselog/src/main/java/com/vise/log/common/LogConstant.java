@@ -48,7 +48,7 @@ public class LogConstant {
      *
      * @return
      */
-    public static final List<Parser> getParsers() {
+    public static List<Parser> getParsers() {
         return LogDefaultConfig.getInstance().getParseList();
     }
 }

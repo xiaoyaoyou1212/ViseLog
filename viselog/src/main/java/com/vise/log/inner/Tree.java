@@ -183,7 +183,7 @@ public abstract class Tree implements ITree {
             try {
                 msg = String.format(msg, args);
             } catch (MissingFormatArgumentException e) {
-
+                e.printStackTrace();
             }
         }
         //判断是否显示排版线条
@@ -233,8 +233,7 @@ public abstract class Tree implements ITree {
         if (stackOffset == -1) {
             return null;
         }
-        StackTraceElement caller = trace[stackOffset];
-        return caller;
+        return trace[stackOffset];
     }
 
     /**
@@ -247,6 +246,9 @@ public abstract class Tree implements ITree {
             return customTag;
         }
         StackTraceElement caller = getCurrentStackTrace();
+        if (caller == null) {
+            return "";
+        }
         String stackTrace = caller.toString();
         stackTrace = stackTrace.substring(stackTrace.lastIndexOf('('), stackTrace.length());
         String tag = "%s.%s%s";

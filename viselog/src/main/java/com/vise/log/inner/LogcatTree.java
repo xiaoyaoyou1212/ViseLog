@@ -3,11 +3,11 @@ package com.vise.log.inner;
 import android.util.Log;
 
 /**
- * @Description: 默认日志树
+ * @Description: Logcat树-输出日志信息到Logcat
  * @author: <a href="http://www.xiaoyaoyou1212.com">DAWI</a>
- * @date: 16/12/11 15:55.
+ * @date: 2017-03-31 14:26
  */
-public class DefaultTree extends Tree {
+public class LogcatTree extends Tree {
     @Override
     protected void log(int type, String tag, String message) {
         switch (type) {

@@ -21,7 +21,7 @@ public class LogConvert {
      * @param object
      * @return
      */
-    public static int getArrayDimension(Object object) {
+    private static int getArrayDimension(Object object) {
         int dim = 0;
         for (int i = 0; i < object.toString().length(); ++i) {
             if (object.toString().charAt(i) == '[') {
@@ -39,7 +39,7 @@ public class LogConvert {
      * @param object
      * @return
      */
-    public static boolean isArray(Object object) {
+    private static boolean isArray(Object object) {
         return object.getClass().isArray();
     }
 
@@ -49,7 +49,7 @@ public class LogConvert {
      * @param object 如L为int型
      * @return
      */
-    public static char getType(Object object) {
+    private static char getType(Object object) {
         if (isArray(object)) {
             String str = object.toString();
             return str.substring(str.lastIndexOf("[") + 1, str.lastIndexOf("[") + 2).charAt(0);
@@ -124,7 +124,7 @@ public class LogConvert {
      * @param array
      * @return
      */
-    public static String parseArray(Object array) {
+    private static String parseArray(Object array) {
         StringBuilder result = new StringBuilder();
         traverseArray(result, array);
         return result.toString();
@@ -146,7 +146,7 @@ public class LogConvert {
      * @param cla
      * @return
      */
-    public static boolean isStaticInnerClass(Class cla) {
+    private static boolean isStaticInnerClass(Class cla) {
         if (cla != null && cla.isMemberClass()) {
             int modifiers = cla.getModifiers();
             if ((modifiers & Modifier.STATIC) == Modifier.STATIC) {
@@ -163,7 +163,7 @@ public class LogConvert {
      * @param childLevel 对象包含子对象层级
      * @return
      */
-    public static String objectToString(Object object, int childLevel) {
+    private static String objectToString(Object object, int childLevel) {
         if (object == null) {
             return LogConstant.STRING_OBJECT_NULL;
         }
@@ -211,10 +211,10 @@ public class LogConvert {
             return;
         }
         if (isSubClass) {
-            builder.append(LogConstant.BR + LogConstant.BR + "=> ");
+            builder.append(LogConstant.BR).append(LogConstant.BR).append("=> ");
         }
         String breakLine = "";
-        builder.append(cla.getSimpleName() + " {");
+        builder.append(cla.getSimpleName()).append(" {");
         Field[] fields = cla.getDeclaredFields();
         for (int i = 0; i < fields.length; ++i) {
             Field field = fields[i];

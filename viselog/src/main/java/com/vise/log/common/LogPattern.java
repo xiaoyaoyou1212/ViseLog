@@ -1,5 +1,7 @@
 package com.vise.log.common;
 
+import android.annotation.SuppressLint;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -60,6 +62,7 @@ public abstract class LogPattern {
 
         private final SimpleDateFormat dateFormat;
 
+        @SuppressLint("SimpleDateFormat")
         public DateLogPattern(int count, int length, String dateFormat) {
             super(count, length);
             if (dateFormat != null) {
@@ -124,7 +127,7 @@ public abstract class LogPattern {
 
         public ConcatenateLogPattern(int count, int length, List<LogPattern> patternList) {
             super(count, length);
-            this.patternList = new ArrayList<LogPattern>(patternList);
+            this.patternList = new ArrayList<>(patternList);
         }
 
         public void addPattern(LogPattern pattern) {
@@ -189,7 +192,7 @@ public abstract class LogPattern {
             }
             this.position = 0;
             this.patternString = string;
-            this.queue = new ArrayList<ConcatenateLogPattern>();
+            this.queue = new ArrayList<>();
             queue.add(new ConcatenateLogPattern(0, 0, new ArrayList<LogPattern>()));
             while (string.length() > position) {
                 int index = string.indexOf("%", position);

@@ -1,5 +1,6 @@
 package com.vise.log.parser;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.text.TextUtils;
 
@@ -13,6 +14,7 @@ import java.util.Map;
  * @date: 16/12/11 11:03.
  */
 public class IntentParse implements Parser<Intent> {
+    @SuppressLint("UseSparseArrays")
     private static Map<Integer, String> flagMap = new HashMap<>();
 
     static {

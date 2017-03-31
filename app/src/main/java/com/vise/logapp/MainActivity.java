@@ -69,10 +69,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.print_normal_message:
-                ViseLog.d("test message");
+                ViseLog.v("test message");
                 break;
             case R.id.print_normal_object:
-                ViseLog.d(new Boolean(true));
+                ViseLog.i(new Boolean(true));
                 break;
             case R.id.print_bundle_object:
                 ViseLog.d(new Bundle());
@@ -81,13 +81,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 printList();
                 break;
             case R.id.print_intent_object:
-                ViseLog.d(new Intent());
+                ViseLog.w(new Intent());
                 break;
             case R.id.print_map_object:
                 printMap();
                 break;
             case R.id.print_reference_object:
-                ViseLog.d(new SoftReference(0));
+                ViseLog.wtf(new SoftReference(0));
                 break;
             case R.id.print_throwable_object:
                 ViseLog.e(new NullPointerException("this object is null!"));
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         for (int i = 0; i < 5; i++) {
             list.add("test" + i);
         }
-        ViseLog.d(list);
+        ViseLog.i(list);
     }
 
     private void printMap() {

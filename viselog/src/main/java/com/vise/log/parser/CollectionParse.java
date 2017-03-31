@@ -1,5 +1,7 @@
 package com.vise.log.parser;
 
+import android.annotation.SuppressLint;
+
 import com.vise.log.common.LogConvert;
 
 import java.util.Collection;
@@ -16,13 +18,14 @@ public class CollectionParse implements Parser<Collection> {
         return Collection.class;
     }
 
+    @SuppressLint("DefaultLocale")
     @Override
     public String parseString(Collection collection) {
         String simpleName = collection.getClass().getName();
         String msg = "%s size = %d [" + LINE_SEPARATOR;
         msg = String.format(msg, simpleName, collection.size());
         if (!collection.isEmpty()) {
-            Iterator<Object> iterator = collection.iterator();
+            Iterator iterator = collection.iterator();
             int flag = 0;
             while (iterator.hasNext()) {
                 String itemString = "[%d]:%s%s";

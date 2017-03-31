@@ -58,10 +58,15 @@ public class LogDefaultConfig implements LogConfig {
     }
 
     public String getFormatTag(StackTraceElement caller) {
-        if (TextUtils.isEmpty(formatTag)) {
+        if (TextUtils.isEmpty(formatTag) || caller == null) {
             return null;
         }
-        return LogPattern.compile(formatTag).apply(caller);
+        LogPattern logPattern = LogPattern.compile(formatTag);
+        if (logPattern != null) {
+            return logPattern.apply(caller);
+        } else {
+            return null;
+        }
     }
 
     @Override

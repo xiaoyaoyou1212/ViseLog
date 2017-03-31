@@ -3,7 +3,9 @@ package com.vise.logapp;
 import android.app.Application;
 
 import com.vise.log.ViseLog;
-import com.vise.log.inner.DefaultTree;
+import com.vise.log.inner.ConsoleTree;
+import com.vise.log.inner.FileTree;
+import com.vise.log.inner.LogcatTree;
 
 /**
  * @Description:
@@ -16,8 +18,10 @@ public class AppApplication extends Application {
         super.onCreate();
         if(BuildConfig.DEBUG){
             ViseLog.getLogConfig().configAllowLog(true)
-                    .configShowBorders(true);
-            ViseLog.plant(new DefaultTree());
+                    .configShowBorders(false);
+            ViseLog.plant(new FileTree(this, "Log"));
+            ViseLog.plant(new ConsoleTree());
+            ViseLog.plant(new LogcatTree());
         }
     }
 }

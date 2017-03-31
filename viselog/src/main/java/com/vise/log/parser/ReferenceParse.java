@@ -20,7 +20,7 @@ public class ReferenceParse implements Parser<Reference> {
         Object actual = reference.get();
         StringBuilder builder = new StringBuilder(reference.getClass().getSimpleName() + "<"
                 + actual.getClass().getSimpleName() + "> {");
-        builder.append("→" + LogConvert.objectToString(actual));
+        builder.append("→").append(LogConvert.objectToString(actual));
         return builder.toString() + "}";
     }
 }
