@@ -2,7 +2,21 @@
 日志系统，使用森林对象维护不同的日志树进行日志输出，可以是Logcat树、文件树等，支持Bundle、Intent、Reference、Throwable、Map、Collection、JSON、Xml等格式化的输出。
 
 
-项目引用：`compile 'com.vise.xiaoyaoyou:viselog:1.0.0'`
+项目引用：`compile 'com.vise.xiaoyaoyou:viselog:1.1.0'`
+
+### QQ交流群
+![QQ群](http://img.blog.csdn.net/20170327191310083)
+
+### 版本说明
+
+- V1.1.0
+增加控制台打印树以及文件输出树，并将DefaultTree名称改为LogcatTree。
+注：文件输出树是依据不同的打印级别来存放文件的，如Info级别每小时新建一个文件存储，Error级别则是只要产生就创建一个新文件，其他具体存储规则可参考代码。每个文件都会包含手机的基本信息，还有在创建文件树时需要传入Context以及文件存放路径名称。
+
+- V1.0.0
+项目初始提交。
+
+版本号说明：版本号第一位为大版本更新时使用，第二位为小功能更新时使用，第三位则是用来bug修复管理。
 
 ## 功能介绍
 1、在Logcat中完美的格式化输出，能很好的过滤手机和其他App的日志信息；
@@ -34,7 +48,7 @@ ViseLog.getLogConfig()
     .configTagPrefix("ViseLog")//设置标签前缀
     .configFormatTag("%d{HH:mm:ss:SSS} %t %c{-5}")//个性化设置标签，默认显示包名
     .configLevel(Log.VERBOSE)；//设置日志最小输出级别，默认Log.VERBOSE
-ViseLog.plant(new DefaultTree());//添加打印日志信息到Logcat的树
+ViseLog.plant(new LogcatTree());//添加打印日志信息到Logcat的树
 ```
 
 1、打印基本信息
