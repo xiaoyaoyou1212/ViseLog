@@ -1,4 +1,7 @@
 # ViseLog
+
+[![Author](https://img.shields.io/badge/%E4%BD%9C%E8%80%85-%E8%83%A1%E4%BC%9F-blue.svg)](http://www.huwei.tech/) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/08746e00437e4a3d8150da3656cdca65)](https://www.codacy.com/app/xiaoyaoyou1212/ViseLog?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=xiaoyaoyou1212/ViseLog&amp;utm_campaign=Badge_Grade) [![License](https://img.shields.io/badge/License-Apache--2.0-green.svg)](https://github.com/xiaoyaoyou1212/ViseLog/blob/master/LICENSE) [![JCenter](https://img.shields.io/badge/JCenter-1.1.0-orange.svg)](https://jcenter.bintray.com/com/vise/xiaoyaoyou/viselog/1.1.0/) [![API](https://img.shields.io/badge/API-8%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=8)
+
 日志系统，使用森林对象维护不同的日志树进行日志输出，可以是Logcat树、文件树等，支持Bundle、Intent、Reference、Throwable、Map、Collection、JSON、Xml等格式化的输出。
 
 
