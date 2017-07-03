@@ -56,9 +56,9 @@ public class FileTree extends Tree {
             dir.mkdirs();
         }
         String timeDay = new SimpleDateFormat("yyyy-MM-dd").format(new Date(System.currentTimeMillis()));
-        String timeHour = new SimpleDateFormat("yyyy-MM-dd HH").format(new Date(System.currentTimeMillis()));
-        String timeMinute = new SimpleDateFormat("yyyy-MM-dd HH:mm").format(new Date(System.currentTimeMillis()));
-        String timeSecond = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(System.currentTimeMillis()));
+        String timeHour = new SimpleDateFormat("yyyy-MM-dd-HH").format(new Date(System.currentTimeMillis()));
+        String timeMinute = new SimpleDateFormat("yyyy-MM-dd-HH-mm").format(new Date(System.currentTimeMillis()));
+        String timeSecond = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss").format(new Date(System.currentTimeMillis()));
         String fileName = FILE_NAME_VERBOSE;
         switch (type) {
             case Log.VERBOSE:

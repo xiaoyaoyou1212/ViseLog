@@ -17,7 +17,7 @@ import java.util.List;
 public class LogDefaultConfig implements LogConfig {
     private boolean enable = true;
     private String tagPrefix;
-    private boolean showBorder = true;
+    private boolean showBorder = false;
     private int logLevel = Log.VERBOSE;
     private List<Parser> parseList;
     private String formatTag;
