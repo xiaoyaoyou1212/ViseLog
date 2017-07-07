@@ -3,6 +3,7 @@ package com.vise.logapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -69,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.print_normal_message:
+                Log.v("message", "test message");
                 ViseLog.v("test message");
                 break;
             case R.id.print_normal_object:
