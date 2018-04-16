@@ -8,7 +8,11 @@
 项目引用：`compile 'com.vise.xiaoyaoyou:viselog:1.1.2'`
 
 ### QQ交流群
-![QQ群](http://img.blog.csdn.net/20170327191310083)
+![QQ群](https://github.com/xiaoyaoyou1212/XSnow/blob/master/screenshot/qq_chat_first.png)
+(此群已满)
+
+![QQ群](https://github.com/xiaoyaoyou1212/XSnow/blob/master/screenshot/qq_chat_second.png)
+
 
 ### 版本说明
 - V1.1.2
